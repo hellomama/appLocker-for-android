@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.glory.droid.applocker"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk android:minSdkVersion="8" />
+
+    <uses-permission android:name="android.permission.READ_LOGS" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.GET_TASKS"/>
+
+    <application
+        android:name="com.lviz.droid.applocker.model.lockapp"
+        android:icon="@drawable/lvzi"
+        android:label="@string/app_name"
+        android:theme="@style/Theme.Basic" >
+        <activity
+            android:label="@string/app_name"
+            android:launchMode="singleTask" 
+            android:name="com.lvzi.droid.applocker.AppLockerActivity" >
+            <intent-filter >
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name="UnlockActivity" >
+        </activity>
+            
+        <service android:name="com.lvzi.droid.applocker.service.AppLockerService" >
+        </service>
+
+        <activity
+          android:launchMode="singleTask" 
+            android:name="PwdUI" >
+        </activity>
+    </application>
+
+</manifest>
